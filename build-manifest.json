@@ -1,0 +1,10 @@
+{
+  "project": "seda-website",
+  "generatedAt": "2026-08-02T18:26:58.971Z",
+  "commit": "222ef99737fb193dc7bd6a0f919e611dbf3e11ff",
+  "branch": "main",
+  "tag": "",
+  "node": "v23.11.0",
+  "siteUrl": "https://seda.art",
+  "environment": "production"
+}
