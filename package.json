@@ -1,0 +1,22 @@
+{
+  "name": "seda-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy && node scripts/write-build-manifest.mjs",
+    "validate": "node scripts/validate-content.mjs && node scripts/check-required-files.mjs && node scripts/check-internal-links.mjs && node scripts/check-external-links.mjs && npx html-validate dist/**/*.html",
+    "test": "npm run build && npm run validate",
+    "ci": "npm ci && npm run test",
+    "lighthouse": "echo \"Optional: run Lighthouse CI with an approved external @lhci/cli version against lighthouserc.cjs\"",
+    "smoke": "node scripts/smoke-url.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "html-validate": "^10.11.3"
+  }
+}

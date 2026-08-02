@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% if not site.isProduction %}
+      <meta name="robots" content="noindex,nofollow">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ title or site.title }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f8f2e7">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="/" aria-label="SEDA home">SEDA</a>
+      <nav aria-label="Primary navigation">
+        <a href="/post-doc/">Post-doc</a>
+        <a href="https://arkivo.art" target="_blank" rel="noopener noreferrer">ARKIVO</a>
+        <a href="https://github.com/seda-studio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+    <main id="main">
+      {{ content | safe }}
+    </main>
+    <footer class="site-footer">
+      <p>&copy; {{ currentYear }} seda studio. Software for Evolving Digital Art.</p>
+    </footer>
+  </body>
+</html>
